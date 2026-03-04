@@ -537,6 +537,13 @@
       .nav-cta { text-align: center; margin-top: .5rem; }
       .hamburger { display: flex; }
 
+      /* ── Fix hero on tablet ── */
+      #hero {
+        min-height: auto;
+        padding: 6.5rem 2rem 3.5rem;
+        align-items: flex-start;
+      }
+
       .problem-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.25rem; }
       .svc-grid, .cases-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr 1fr; }
@@ -544,10 +551,29 @@
       .why-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .trust-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      .hero-stats { gap: 1.75rem; }
+      .hero-stats { gap: 1.5rem; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas a { width: 100%; justify-content: center; }
     }
     @media (max-width: 520px) {
-      section { padding: 4rem 1.25rem; }
+      section { padding: 3.5rem 1.25rem; }
+
+      /* ── Fix hero on mobile ── */
+      #hero {
+        min-height: auto;
+        padding: 5.5rem 1.25rem 3rem;
+        align-items: flex-start;
+      }
+      #hero h1 { font-size: 2.2rem; }
+      .hero-sub { font-size: .92rem; }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .75rem;
+      }
+      .stat-val { font-size: 1.6rem; }
+      .stat-lbl { font-size: .68rem; }
+
       .steps { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
