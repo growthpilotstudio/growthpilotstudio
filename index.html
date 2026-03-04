@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GrowthPilot Studio – Performance marketing agency turning ad spend into qualified leads through Google Ads, LinkedIn Ads, and Meta Ads." />
+  <title>GrowthPilot Studio – Turning Ad Spend Into Qualified Leads</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── BRAND TOKENS ─────────────────────────── */
+    :root {
+      --navy:       #1F3C88;   /* Deep Blue – primary  */
+      --blue:       #3A86FF;   /* Bright Blue – accent */
+      --navy-dark:  #0E2057;   /* darker navy for hero bg */
+      --navy-mid:   #162d6b;   /* mid navy              */
+      --txt:        #1A1A1A;   /* Dark Text             */
+      --txt-light:  #4A5568;   /* body secondary        */
+      --bg-light:   #F5F7FA;   /* Light Gray bg         */
+      --white:      #FFFFFF;
+      --blue-glow:  rgba(58,134,255,.14);
+      --blue-border:rgba(58,134,255,.25);
+      --border:     rgba(31,60,136,.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--txt);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Poppins', sans-serif; }
+
+    /* ── HELPERS ──────────────────────────────── */
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    section { padding: 5.5rem 2rem; }
+
+    .s-label {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: .6rem;
+    }
+    .s-title {
+      font-size: clamp(1.7rem,3.5vw,2.6rem);
+      font-weight: 800; line-height: 1.18;
+      letter-spacing: -.02em; margin-bottom: .85rem;
+    }
+    .s-desc {
+      font-size: 1rem; color: var(--txt-light);
+      max-width: 540px; line-height: 1.75;
+    }
+    .divider {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg,var(--blue),var(--navy));
+      border-radius: 2px; margin-bottom: 2rem;
+    }
+
+    /* ── BUTTONS ──────────────────────────────── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--blue); color: #fff;
+      padding: .85rem 1.9rem; border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover {
+      background: #2a76ef;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(58,134,255,.38);
+    }
+    .btn-outline-white {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: transparent; color: #fff;
+      padding: .85rem 1.9rem; border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer;
+      border: 2px solid rgba(255,255,255,.45);
+      transition: border-color .2s, background .2s, transform .2s;
+    }
+    .btn-outline-white:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,.08);
+      transform: translateY(-2px);
+    }
+    .btn-navy {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--navy); color: #fff;
+      padding: .85rem 1.9rem; border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem; font-weight: 600;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+    .btn-navy:hover {
+      background: var(--navy-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(31,60,136,.35);
+    }
+
+    /* ── TAG PILL ─────────────────────────────── */
+    .tag {
+      background: rgba(31,60,136,.07);
+      color: var(--navy); border: 1px solid var(--border);
+      padding: .22rem .65rem; border-radius: 6px;
+      font-size: .72rem; font-weight: 500;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+
+    /* ══════════════════════════════════════════
+       NAV
+    ══════════════════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: .9rem 2rem;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(31,60,136,.09);
+      transition: padding .25s, box-shadow .25s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(31,60,136,.1); }
+
+    .nav-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-link { display: flex; align-items: center; text-decoration: none; }
+    .logo-link img { height: 40px; width: auto; display: block; }
+
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500;
+      color: var(--txt-light); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--blue) !important; color: #fff !important;
+      padding: .45rem 1.2rem; border-radius: 7px;
+      font-weight: 600 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: #2a76ef !important; color: #fff !important; }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--navy); border-radius: 2px; transition: all .3s;
+    }
+
+    /* ══════════════════════════════════════════
+       HERO  (dark navy gradient)
+    ══════════════════════════════════════════ */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 8rem 2rem 5rem;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #1a4fa8 100%);
+    }
+
+    /* subtle grid overlay */
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 20%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 20%, transparent 100%);
+    }
+    /* blue glow top-right */
+    #hero::after {
+      content: '';
+      position: absolute; top: -10%; right: -5%;
+      width: 55%; height: 80%;
+      background: radial-gradient(ellipse, rgba(58,134,255,.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner { max-width: 1160px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: rgba(58,134,255,.18); border: 1px solid rgba(58,134,255,.35);
+      border-radius: 100px; padding: .3rem .95rem;
+      font-size: .72rem; font-weight: 600; color: #93c4ff;
+      letter-spacing: .07em; text-transform: uppercase; margin-bottom: 1.35rem;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+
+    #hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4.75rem);
+      font-weight: 900; line-height: 1.07; letter-spacing: -.03em;
+      color: #fff; margin-bottom: 1.35rem; max-width: 820px;
+    }
+    #hero h1 .hl { color: var(--blue); }
+
+    .hero-sub {
+      font-size: clamp(.95rem,1.8vw,1.12rem); color: rgba(255,255,255,.75);
+      max-width: 540px; margin-bottom: 2.25rem; line-height: 1.78;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 3.5rem; }
+
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 2.5rem; }
+    .stat { display: flex; flex-direction: column; }
+    .stat-val {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem; font-weight: 800; color: #fff;
+      letter-spacing: -.03em; line-height: 1;
+    }
+    .stat-val span { color: var(--blue); }
+    .stat-lbl { font-size: .75rem; color: rgba(255,255,255,.55); margin-top: .2rem; }
+
+    /* ══════════════════════════════════════════
+       TRUSTED BY BAND
+    ══════════════════════════════════════════ */
+    #trust {
+      padding: 2.5rem 2rem;
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem 3rem;
+    }
+    .trust-label { font-size: .72rem; font-weight: 600; color: var(--txt-light); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .trust-platforms { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2.5rem; }
+    .trust-badge {
+      display: flex; align-items: center; gap: .55rem;
+      font-size: .82rem; font-weight: 600; color: var(--txt-light);
+      opacity: .7;
+    }
+    .trust-badge svg { flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════
+       PROBLEM  (white bg)
+    ══════════════════════════════════════════ */
+    #problem { background: var(--white); }
+
+    .problem-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center; margin-top: 3rem;
+    }
+    .pain-list { display: flex; flex-direction: column; gap: .85rem; }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: .9rem;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: var(--bg-light); transition: border-color .25s, box-shadow .25s;
+    }
+    .pain-item:hover { border-color: var(--blue-border); box-shadow: 0 4px 16px rgba(58,134,255,.08); }
+    .pain-ico {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: #FEE2E2; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center; font-size: .95rem;
+    }
+    .pain-item h4 { font-family:'Poppins',sans-serif; font-size: .88rem; font-weight: 700; margin-bottom: .18rem; color: var(--txt); }
+    .pain-item p  { font-size: .82rem; color: var(--txt-light); line-height: 1.55; }
+
+    .sol-card {
+      background: linear-gradient(135deg, rgba(31,60,136,.06) 0%, rgba(58,134,255,.05) 100%);
+      border: 1.5px solid var(--blue-border); border-radius: 20px; padding: 2.25rem;
+    }
+    .sol-pill {
+      display: inline-flex; align-items: center; gap: .35rem;
+      background: rgba(58,134,255,.1); color: var(--blue);
+      padding: .28rem .8rem; border-radius: 100px;
+      font-size: .74rem; font-weight: 700; letter-spacing: .03em;
+    }
+    .sol-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--navy); letter-spacing: -.02em; margin: 1.1rem 0 .8rem; }
+    .sol-card p  { font-size: .88rem; color: var(--txt-light); line-height: 1.75; margin-bottom: .9rem; }
+
+    /* ══════════════════════════════════════════
+       SERVICES  (light-gray bg)
+    ══════════════════════════════════════════ */
+    #services { background: var(--bg-light); }
+
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; margin-top: 3rem; }
+    .svc-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2rem; transition: all .3s; position: relative; overflow: hidden;
+    }
+    .svc-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--blue));
+      opacity: 0; transition: opacity .3s;
+    }
+    .svc-card:hover { border-color: var(--blue-border); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(31,60,136,.12); }
+    .svc-card:hover::before { opacity: 1; }
+
+    .svc-ico {
+      width: 50px; height: 50px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.35rem; font-size: 1.35rem;
+    }
+    .svc-ico.google { background: #fff3e0; }
+    .svc-ico.linkedin { background: #e8f4fd; }
+    .svc-ico.meta    { background: #f0f4ff; }
+
+    .svc-card h3 { font-size: 1.08rem; font-weight: 700; color: var(--navy); letter-spacing: -.01em; margin-bottom: .6rem; }
+    .svc-card p  { font-size: .83rem; color: var(--txt-light); line-height: 1.68; margin-bottom: 1.25rem; }
+
+    /* ══════════════════════════════════════════
+       PROCESS  (navy bg)
+    ══════════════════════════════════════════ */
+    #process { background: var(--navy); }
+    #process .s-label { color: #93c4ff; }
+    #process .s-title { color: #fff; }
+    #process .s-desc  { color: rgba(255,255,255,.65); }
+    .divider-white { width: 48px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 2rem; }
+
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; position: relative; }
+    .steps::before {
+      content: ''; position: absolute;
+      top: 30px; left: calc(12.5% + 14px); right: calc(12.5% + 14px); height: 1px;
+      background: linear-gradient(90deg, var(--blue), rgba(58,134,255,.2), var(--blue), rgba(58,134,255,.2));
+    }
+    .step { text-align: center; }
+    .step-num {
+      width: 60px; height: 60px; border-radius: 50%;
+      border: 2px solid rgba(58,134,255,.5); background: rgba(58,134,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.35rem; font-weight: 800; color: var(--blue);
+      margin: 0 auto 1.35rem; position: relative; z-index: 1;
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
+    .step p  { font-size: .82rem; color: rgba(255,255,255,.58); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════
+       CASE STUDIES  (white)
+    ══════════════════════════════════════════ */
+    #cases { background: var(--white); }
+
+    .cases-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; margin-top: 3rem; }
+    .case-card {
+      border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.9rem; transition: all .3s; background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .case-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--blue));
+      opacity: 0; transition: opacity .3s;
+    }
+    .case-card:hover { border-color: var(--blue-border); transform: translateY(-4px); box-shadow: 0 10px 36px rgba(31,60,136,.1); }
+    .case-card:hover::after { opacity: 1; }
+
+    .case-industry { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: .8rem; }
+    .case-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.45; margin-bottom: 1.35rem; }
+
+    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    .metric { background: var(--bg-light); border-radius: 10px; padding: .85rem; }
+    .m-val { font-family:'Poppins',sans-serif; font-size: 1.65rem; font-weight: 800; color: var(--navy); letter-spacing: -.03em; line-height: 1; }
+    .m-val span { color: var(--blue); }
+    .m-key { font-size: .72rem; color: var(--txt-light); margin-top: .2rem; }
+
+    /* ══════════════════════════════════════════
+       WHY CHOOSE (light-gray)
+    ══════════════════════════════════════════ */
+    #why { background: var(--bg-light); }
+
+    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.15rem; margin-top: 3rem; }
+    .why-item {
+      display: flex; gap: 1.1rem; padding: 1.65rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; transition: all .3s;
+    }
+    .why-item:hover { border-color: var(--blue-border); box-shadow: 0 6px 24px rgba(31,60,136,.08); }
+    .why-ico {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(31,60,136,.08), rgba(58,134,255,.08));
+      border: 1.5px solid var(--blue-border); border-radius: 11px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .why-item h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: .28rem; }
+    .why-item p  { font-size: .82rem; color: var(--txt-light); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════
+       ABOUT (white)
+    ══════════════════════════════════════════ */
+    #about { background: var(--white); }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-text .s-title { color: var(--navy); }
+
+    .about-card {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 20px; padding: 2.5rem; text-align: center; color: #fff;
+      box-shadow: 0 16px 60px rgba(31,60,136,.28);
+    }
+    .avatar {
+      width: 96px; height: 96px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue) 0%, #60a5fa 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Poppins',sans-serif; font-size: 2.2rem; font-weight: 800; color: #fff;
+      margin: 0 auto 1.25rem; letter-spacing: -.04em;
+      border: 3px solid rgba(255,255,255,.2);
+    }
+    .founder-name  { font-family:'Poppins',sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: .2rem; }
+    .founder-role  { font-size: .8rem; color: #93c4ff; font-weight: 600; margin-bottom: 1.5rem; }
+    .pbadges       { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; }
+    .pbadge {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.8); border-radius: 100px;
+      padding: .28rem .75rem; font-size: .77rem; font-weight: 500;
+    }
+
+    /* ══════════════════════════════════════════
+       CTA BAND (bright blue)
+    ══════════════════════════════════════════ */
+    #cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a4fa8 50%, var(--navy-mid) 100%);
+      padding: 5.5rem 2rem; text-align: center;
+    }
+    #cta-band .s-label { color: #93c4ff; }
+    #cta-band .s-title { color: #fff; font-size: clamp(1.9rem,4vw,2.9rem); max-width: 700px; margin: .3rem auto .85rem; }
+    #cta-band .s-desc  { color: rgba(255,255,255,.68); margin: 0 auto 2.25rem; text-align: center; max-width: 520px; }
+
+    /* ══════════════════════════════════════════
+       CONTACT (light-gray)
+    ══════════════════════════════════════════ */
+    #contact { background: var(--bg-light); }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+    .contact-info h3 { font-size: 1.3rem; font-weight: 700; color: var(--navy); letter-spacing: -.02em; margin-bottom: .85rem; }
+    .contact-info p  { font-size: .88rem; color: var(--txt-light); line-height: 1.78; margin-bottom: 1.75rem; }
+    .c-detail { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; font-size: .87rem; color: var(--txt); }
+    .c-ico {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(58,134,255,.1); border: 1px solid var(--blue-border);
+      border-radius: 9px; display: flex; align-items: center; justify-content: center;
+    }
+
+    .contact-form {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.25rem;
+      box-shadow: 0 4px 32px rgba(31,60,136,.07);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label {
+      display: block; font-size: .74rem; font-weight: 600;
+      color: var(--txt-light); margin-bottom: .42rem; letter-spacing: .03em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; background: var(--bg-light);
+      border: 1.5px solid rgba(31,60,136,.15); border-radius: 8px;
+      padding: .72rem .95rem; color: var(--txt);
+      font-family: 'Inter', sans-serif; font-size: .875rem;
+      outline: none; transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(58,134,255,.13);
+      background: var(--white);
+    }
+    .form-group select option { background: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 96px; }
+    .form-submit {
+      width: 100%; padding: .9rem; font-size: .97rem; font-weight: 600;
+      border-radius: 8px; background: var(--navy); color: #fff;
+      border: none; cursor: pointer;
+      font-family: 'Inter', sans-serif; letter-spacing: .01em;
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+    .form-submit:hover {
+      background: var(--blue); transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(58,134,255,.32);
+    }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(58,134,255,.15);
+      padding: 2.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.25rem;
+    }
+    .footer-logo img { height: 32px; width: auto; display: block; }
+    .footer-tagline { font-size: .78rem; color: rgba(255,255,255,.4); margin-top: .35rem; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
+
+    /* ══════════════════════════════════════════
+       SCROLL REVEAL
+    ══════════════════════════════════════════ */
+    .fi { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .fi.on { opacity: 1; transform: none; }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 920px) {
+      .nav-links {
+        display: none; position: fixed; top: 63px; left: 0; right: 0;
+        background: rgba(255,255,255,.98); flex-direction: column;
+        padding: 1.25rem 2rem; border-bottom: 1px solid var(--border); gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: .8rem 0; border-bottom: 1px solid var(--border); font-size: .95rem; }
+      .nav-cta { text-align: center; margin-top: .5rem; }
+      .hamburger { display: flex; }
+
+      .problem-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+      .svc-grid, .cases-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .steps::before { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .hero-stats { gap: 1.75rem; }
+    }
+    @media (max-width: 520px) {
+      section { padding: 4rem 1.25rem; }
+      .steps { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════
+  NAV
+════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="logo-link">
+      <img src="logo.png" alt="GrowthPilot Studio" />
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+    </ul>
+    <button class="hamburger" id="burger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════
+  HERO
+════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Performance Marketing Agency</div>
+    <h1>Turning Ad Spend Into<br><span class="hl">Qualified Leads</span></h1>
+    <p class="hero-sub">We help B2B and high-growth companies scale with performance marketing across Google Ads, LinkedIn Ads, and Meta Ads — focusing on leads that convert, not just clicks.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.3 1l-2.2 2.2z" fill="currentColor"/></svg>
+        Book a Free Strategy Call
+      </a>
+      <a href="#cases" class="btn-outline-white">
+        View Case Studies
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-val">42<span>%</span></span>
+        <span class="stat-lbl">Avg. CPL Reduction</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">2000<span>+</span></span>
+        <span class="stat-lbl">Qualified Leads Generated</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">3</span>
+        <span class="stat-lbl">Ad Platforms Mastered</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  TRUST BAND
+════════════════════════════════ -->
+<div id="trust">
+  <div class="trust-inner">
+    <span class="trust-label">Campaigns run on</span>
+    <div class="trust-platforms">
+      <!-- Google -->
+      <div class="trust-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Google Ads
+      </div>
+      <!-- LinkedIn -->
+      <div class="trust-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+        LinkedIn Ads
+      </div>
+      <!-- Meta -->
+      <div class="trust-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0082FB"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        Meta Ads
+      </div>
+      <!-- Google Analytics -->
+      <div class="trust-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#E37400"><path d="M22 21H2V3h2v16h2v-7h4v7h2V8h4v13h2V12h4v9z"/></svg>
+        Google Analytics
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+  PROBLEM
+════════════════════════════════ -->
+<section id="problem">
+  <div class="section-inner">
+    <p class="s-label fi">The Problem</p>
+    <h2 class="s-title fi" style="color:var(--navy)">Is Your Ad Spend Generating Leads<br>— or Just Clicks?</h2>
+    <div class="problem-grid">
+      <div class="pain-list fi">
+        <div class="pain-item">
+          <div class="pain-ico">💸</div>
+          <div><h4>Wasted Ad Budget</h4><p>Thousands spent on campaigns with little to show in terms of qualified pipeline.</p></div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-ico">📉</div>
+          <div><h4>Low Lead Quality</h4><p>Leads that don't convert, draining your sales team's time and energy.</p></div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-ico">🎯</div>
+          <div><h4>High Cost Per Lead</h4><p>Rising CPL that makes scaling campaigns economically unviable.</p></div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-ico">⚙️</div>
+          <div><h4>Poor Campaign Optimisation</h4><p>Campaigns left to run without strategic, ongoing management.</p></div>
+        </div>
+      </div>
+
+      <div class="sol-card fi">
+        <span class="sol-pill">✓ The GrowthPilot Studio Approach</span>
+        <h3>We Focus on Revenue-Generating Leads</h3>
+        <p>Many companies invest heavily in advertising but struggle with low lead quality, high cost per lead, and poor optimisation. GrowthPilot Studio focuses on generating qualified leads that convert into revenue — not just clicks on a dashboard.</p>
+        <p>Every campaign is built around your ideal customer profile, with conversion tracking, bid strategy, and creative all optimised for lead quality from day one.</p>
+        <a href="#contact" class="btn-primary" style="margin-top:.5rem">Start Generating Qualified Leads</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  SERVICES
+════════════════════════════════ -->
+<section id="services">
+  <div class="section-inner">
+    <p class="s-label fi">What We Do</p>
+    <h2 class="s-title fi" style="color:var(--navy)">Performance Marketing<br>That Drives Real Revenue</h2>
+    <p class="s-desc fi">Specialised lead generation across the three most powerful ad platforms — engineered for qualified pipeline, not vanity metrics.</p>
+    <div class="svc-grid">
+
+      <div class="svc-card fi">
+        <div class="svc-ico google">
+          <svg width="26" height="26" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <h3>Google Ads Lead Generation</h3>
+        <p>High-intent search campaigns that capture buyers actively looking for your solution. We optimise for lead quality, not just volume.</p>
+        <div class="tags">
+          <span class="tag">Search Campaigns</span>
+          <span class="tag">Landing Page CRO</span>
+          <span class="tag">Conversion Tracking</span>
+          <span class="tag">Lead Quality Optimisation</span>
+        </div>
+      </div>
+
+      <div class="svc-card fi">
+        <div class="svc-ico linkedin">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+        </div>
+        <h3>LinkedIn Ads for B2B</h3>
+        <p>Reach decision-makers and executives at your target accounts. We specialise in ABM strategies that fill enterprise pipelines.</p>
+        <div class="tags">
+          <span class="tag">Lead Gen Forms</span>
+          <span class="tag">ABM Targeting</span>
+          <span class="tag">Executive Targeting</span>
+          <span class="tag">Demand Generation</span>
+        </div>
+      </div>
+
+      <div class="svc-card fi">
+        <div class="svc-ico meta">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#0082FB"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </div>
+        <h3>Meta Ads Lead Generation</h3>
+        <p>Facebook and Instagram campaigns with creative-first strategies that generate high-intent leads at scale for B2B and B2C audiences.</p>
+        <div class="tags">
+          <span class="tag">Facebook Lead Ads</span>
+          <span class="tag">Creative Testing</span>
+          <span class="tag">Funnel Strategy</span>
+          <span class="tag">Audience Scaling</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  PROCESS
+════════════════════════════════ -->
+<section id="process">
+  <div class="section-inner">
+    <p class="s-label fi">How It Works</p>
+    <h2 class="s-title fi">Our 4-Step Growth Process</h2>
+    <p class="s-desc fi">A proven framework built to reduce cost per lead, improve lead quality, and profitably scale ad spend.</p>
+    <div class="steps">
+      <div class="step fi">
+        <div class="step-num">01</div>
+        <h3>Strategy &amp; Audit</h3>
+        <p>Analyse your business, audience, and funnel. Identify gaps and build the right targeting foundation.</p>
+      </div>
+      <div class="step fi">
+        <div class="step-num">02</div>
+        <h3>Campaign Setup</h3>
+        <p>Build high-performing campaigns with precision tracking, smart bidding, and conversion-focused creative.</p>
+      </div>
+      <div class="step fi">
+        <div class="step-num">03</div>
+        <h3>Optimise</h3>
+        <p>Continuously reduce CPL and improve lead quality through rigorous, data-driven decisions.</p>
+      </div>
+      <div class="step fi">
+        <div class="step-num">04</div>
+        <h3>Scale</h3>
+        <p>Increase ad spend confidently once campaigns are profitable and delivering consistent ROI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  CASE STUDIES
+════════════════════════════════ -->
+<section id="cases">
+  <div class="section-inner">
+    <p class="s-label fi">Case Studies</p>
+    <h2 class="s-title fi" style="color:var(--navy)">Results That Speak<br>for Themselves</h2>
+    <p class="s-desc fi">Real outcomes for real clients — measurable improvements in lead volume, quality, and cost efficiency.</p>
+    <div class="cases-grid">
+
+      <div class="case-card fi">
+        <p class="case-industry">B2B SaaS · Google Ads</p>
+        <h3>Scaled qualified pipeline while dramatically reducing acquisition cost</h3>
+        <div class="metrics">
+          <div class="metric"><div class="m-val">42<span>%</span></div><div class="m-key">CPL Reduction</div></div>
+          <div class="metric"><div class="m-val">320<span>+</span></div><div class="m-key">Qualified Leads</div></div>
+        </div>
+      </div>
+
+      <div class="case-card fi">
+        <p class="case-industry">EdTech · Meta Ads</p>
+        <h3>Massive lead volume growth with significant cost per lead improvement</h3>
+        <div class="metrics">
+          <div class="metric"><div class="m-val">2K<span>+</span></div><div class="m-key">Leads Generated</div></div>
+          <div class="metric"><div class="m-val">35<span>%</span></div><div class="m-key">CPL Reduction</div></div>
+        </div>
+      </div>
+
+      <div class="case-card fi">
+        <p class="case-industry">IT Services · LinkedIn Ads</p>
+        <h3>Generated high-value enterprise leads through targeted LinkedIn campaigns</h3>
+        <div class="metrics">
+          <div class="metric"><div class="m-val">5<span>×</span></div><div class="m-key">Pipeline Growth</div></div>
+          <div class="metric"><div class="m-val">C-Suite</div><div class="m-key">Audience Reached</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  WHY CHOOSE
+════════════════════════════════ -->
+<section id="why">
+  <div class="section-inner">
+    <p class="s-label fi">Why GrowthPilot Studio</p>
+    <h2 class="s-title fi" style="color:var(--navy)">Performance-Driven.<br>Results-Obsessed.</h2>
+    <div class="why-grid">
+      <div class="why-item fi">
+        <div class="why-ico">🎯</div>
+        <div><h4>Performance-Driven Approach</h4><p>Every decision is grounded in campaign performance data — no guesswork, no vanity metrics.</p></div>
+      </div>
+      <div class="why-item fi">
+        <div class="why-ico">✅</div>
+        <div><h4>Qualified Leads, Not Vanity Metrics</h4><p>We optimise for leads that convert into real sales pipeline, not impressions that pad a report.</p></div>
+      </div>
+      <div class="why-item fi">
+        <div class="why-ico">📊</div>
+        <div><h4>Data-Driven Optimisation</h4><p>Continuous A/B testing, bid refinement, and audience optimisation for consistent improvement.</p></div>
+      </div>
+      <div class="why-item fi">
+        <div class="why-ico">📋</div>
+        <div><h4>Transparent Reporting</h4><p>Clear, honest reporting so you always know what's working and what your budget achieves.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  ABOUT
+════════════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="fi">
+        <p class="s-label">About</p>
+        <h2 class="s-title" style="color:var(--navy)">Built by a Performance Marketing Specialist</h2>
+        <div class="divider"></div>
+        <p style="color:var(--txt-light);line-height:1.82;margin-bottom:1rem;font-size:.92rem">GrowthPilot Studio was founded by <strong style="color:var(--navy)">Amit Yadav</strong>, a performance marketing specialist with deep expertise in B2B lead generation through Google Ads, LinkedIn Ads, and Meta Ads.</p>
+        <p style="color:var(--txt-light);line-height:1.82;margin-bottom:2rem;font-size:.92rem">With a focus on high-growth companies, Amit built GrowthPilot Studio to provide specialised, results-oriented performance marketing that turns ad spend into predictable, qualified pipeline — not just clicks on a dashboard.</p>
+        <a href="#contact" class="btn-navy">Work With Amit</a>
+      </div>
+      <div class="about-card fi">
+        <div class="avatar">AY</div>
+        <div class="founder-name">Amit Yadav</div>
+        <div class="founder-role">Founder &amp; Performance Marketing Specialist</div>
+        <div class="pbadges">
+          <span class="pbadge">Google Ads</span>
+          <span class="pbadge">LinkedIn Ads</span>
+          <span class="pbadge">Meta Ads</span>
+          <span class="pbadge">B2B Lead Gen</span>
+          <span class="pbadge">Performance Marketing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  CTA BAND
+════════════════════════════════ -->
+<section id="cta-band">
+  <div class="section-inner" style="text-align:center">
+    <p class="s-label fi">Get Started</p>
+    <h2 class="s-title fi">Ready to Turn Ad Spend Into<br>Qualified Leads?</h2>
+    <p class="s-desc fi">Book a free strategy call. We'll analyse your setup and show you exactly where the growth opportunities are.</p>
+    <div class="fi" style="margin-top:2.25rem">
+      <a href="#contact" class="btn-primary" style="font-size:1rem;padding:.95rem 2.25rem">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.3 1l-2.2 2.2z" fill="currentColor"/></svg>
+        Book Your Free Strategy Call
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  CONTACT
+════════════════════════════════ -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="s-label fi">Contact</p>
+    <h2 class="s-title fi" style="color:var(--navy)">Let's Talk About<br>Your Growth Goals</h2>
+    <div class="contact-grid">
+      <div class="fi">
+        <h3>Book Your Free Strategy Call</h3>
+        <p>Tell us about your business and goals. We'll analyse your current ad setup and show you exactly where the growth opportunities are.</p>
+        <div class="c-detail">
+          <div class="c-ico">🌐</div>
+          <span>growthpilotstudio.in</span>
+        </div>
+        <div class="c-detail">
+          <div class="c-ico">📍</div>
+          <span>India</span>
+        </div>
+        <div style="margin-top:1.75rem">
+          <p style="font-size:.72rem;color:var(--txt-light);margin-bottom:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase">We work with</p>
+          <div class="tags">
+            <span class="tag">B2B SaaS</span>
+            <span class="tag">EdTech</span>
+            <span class="tag">IT Services</span>
+            <span class="tag">High-Growth Startups</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fi">
+        <!-- Replace YOUR_FORM_ID after signing up free at formspree.io -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" name="name" placeholder="Rahul Sharma" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" name="email" placeholder="rahul@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company / Brand Name *</label>
+            <input type="text" name="company" placeholder="Your Company" required />
+          </div>
+          <div class="form-group">
+            <label>Monthly Ad Budget</label>
+            <select name="budget">
+              <option value="">Select your monthly budget</option>
+              <option>Under ₹50,000</option>
+              <option>₹50,000 – ₹1,00,000</option>
+              <option>₹1,00,000 – ₹5,00,000</option>
+              <option>₹5,00,000+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell us about your goals</label>
+            <textarea name="message" placeholder="Describe your business, target audience, and what you want to achieve with performance marketing..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Book Free Consultation →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+  FOOTER
+════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#hero" class="footer-logo">
+        <img src="logo_white.png" alt="GrowthPilot Studio" />
+      </a>
+      <p class="footer-tagline">Turning Ad Spend Into Qualified Leads</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#cases">Case Studies</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 GrowthPilot Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
+  );
+
+  // Shrink nav on scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('on'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
