@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Free Strategy Call | GrowthPilot Studio</title>
+  <meta name="description" content="Ready to grow your business with paid ads? Book a free strategy call with GrowthPilot Studio. No fluff — just a clear plan to generate more qualified leads." />
+  <link rel="canonical" href="https://growthpilotstudio.in/contact.html" />
+  <meta property="og:title" content="Book a Free Strategy Call | GrowthPilot Studio" />
+  <meta property="og:description" content="Ready to grow your business with paid ads? Book a free strategy call with GrowthPilot Studio." />
+  <meta property="og:url" content="https://growthpilotstudio.in/contact.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:      #1F3C88;
+      --navy-dark: #0E2057;
+      --navy-mid:  #162d6b;
+      --blue:      #3A86FF;
+      --txt:       #1A1A1A;
+      --txt-light: #4A5568;
+      --bg-light:  #F5F7FA;
+      --white:     #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--txt); background: var(--white); }
+
+    /* ── NAV ──────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: .6rem 2rem;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(31,60,136,.09);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(31,60,136,.12); }
+    .nav-inner { max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo-link { text-decoration: none; }
+    .logo-link img { height: 72px; width: auto; display: block; }
+    .nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { text-decoration: none; font-size: .9rem; font-weight: 500; color: var(--txt-light); transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); font-weight: 600; }
+    .nav-cta {
+      background: var(--navy); color: var(--white) !important;
+      padding: .55rem 1.3rem; border-radius: 8px; font-weight: 600 !important;
+      transition: background .2s, transform .2s !important;
+    }
+    .nav-cta:hover { background: var(--blue) !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: .3s; }
+
+    /* ── HERO ─────────────────────────────── */
+    #hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #1a4fa8 100%);
+      padding: 9rem 2rem 5rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(58,134,255,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block; background: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.9); font-size: .78rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .4rem 1rem; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,.18); margin-bottom: 1.25rem;
+    }
+    #hero h1 {
+      font-family: 'Poppins', sans-serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800; color: var(--white); line-height: 1.2;
+      letter-spacing: -.03em; margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;
+    }
+    #hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,.78);
+      max-width: 520px; margin: 0 auto; line-height: 1.75;
+    }
+
+    /* ── CONTACT SECTION ──────────────────── */
+    #contact-section {
+      padding: 5.5rem 2rem;
+      background: var(--bg-light);
+    }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* Left col */
+    .contact-info h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--navy); letter-spacing: -.03em;
+      margin-bottom: 1rem;
+    }
+    .contact-info > p {
+      font-size: .95rem; color: var(--txt-light); line-height: 1.75; margin-bottom: 2rem;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: .85rem;
+    }
+    .contact-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: var(--navy); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-icon svg { width: 20px; height: 20px; }
+    .contact-item-text { display: flex; flex-direction: column; }
+    .contact-item-text strong { font-size: .82rem; font-weight: 600; color: var(--txt); margin-bottom: .15rem; }
+    .contact-item-text a, .contact-item-text span {
+      font-size: .9rem; color: var(--txt-light); text-decoration: none; transition: color .2s;
+    }
+    .contact-item-text a:hover { color: var(--navy); }
+
+    /* What to expect box */
+    .expect-box {
+      background: var(--white);
+      border: 1px solid rgba(31,60,136,.1);
+      border-radius: 14px; padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .expect-box h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: .82rem; font-weight: 700; color: var(--navy);
+      letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .expect-item {
+      display: flex; align-items: flex-start; gap: .75rem;
+      margin-bottom: .85rem;
+    }
+    .expect-item:last-child { margin-bottom: 0; }
+    .check-dot {
+      width: 22px; height: 22px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin-top: .1rem;
+    }
+    .check-dot svg { width: 12px; height: 12px; }
+    .expect-item p { font-size: .87rem; color: var(--txt-light); line-height: 1.55; }
+    .expect-item strong { color: var(--txt); font-weight: 600; }
+
+    /* FAQ */
+    .faq-section { margin-top: 0; }
+    .faq-section h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(31,60,136,.1);
+      padding: .75rem 0;
+    }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; font-size: .88rem; font-weight: 600; color: var(--txt);
+      gap: 1rem; user-select: none;
+    }
+    .faq-q .faq-chevron { flex-shrink: 0; transition: transform .3s; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      font-size: .85rem; color: var(--txt-light); line-height: 1.65;
+      max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding-top: .6rem; }
+
+    /* Right col — form */
+    .form-card {
+      background: var(--white);
+      border: 1px solid rgba(31,60,136,.1);
+      border-radius: 20px; padding: 2.5rem;
+      box-shadow: 0 8px 48px rgba(31,60,136,.08);
+    }
+    .form-card h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem; font-weight: 800; color: var(--navy);
+      letter-spacing: -.03em; margin-bottom: .5rem;
+    }
+    .form-card > p {
+      font-size: .9rem; color: var(--txt-light); margin-bottom: 1.75rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.1rem; }
+    .form-group label { font-size: .82rem; font-weight: 600; color: var(--txt); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: .75rem 1rem; border: 1.5px solid rgba(31,60,136,.2);
+      border-radius: 9px; font-family: 'Inter', sans-serif;
+      font-size: .9rem; color: var(--txt); background: var(--bg-light);
+      transition: border-color .2s, box-shadow .2s; outline: none;
+      width: 100%;
+    }
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(31,60,136,.1);
+      background: var(--white);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #aab; }
+
+    .btn-submit {
+      width: 100%; padding: 1rem; border: none;
+      background: var(--navy); color: var(--white);
+      font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700;
+      border-radius: 9px; cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      letter-spacing: .01em;
+    }
+    .btn-submit:hover {
+      background: var(--blue); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(58,134,255,.35);
+    }
+    .form-note {
+      text-align: center; font-size: .78rem; color: var(--txt-light);
+      margin-top: .85rem;
+    }
+
+    /* ── TRUST STRIP ──────────────────────── */
+    #trust {
+      padding: 3.5rem 2rem;
+      background: var(--white);
+      border-top: 1px solid rgba(31,60,136,.07);
+    }
+    .trust-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .trust-stat { text-align: center; }
+    .trust-stat .num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem; font-weight: 800; color: var(--navy);
+      display: block; line-height: 1;
+    }
+    .trust-stat .lbl { font-size: .78rem; color: var(--txt-light); margin-top: .25rem; }
+    .trust-divider { width: 1px; height: 40px; background: rgba(31,60,136,.15); }
+
+    /* ── FOOTER ───────────────────────────── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,.7);
+      padding: 3.5rem 2rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .footer-brand img { height: 64px; width: auto; margin-bottom: 1rem; display: block; }
+    .footer-brand p { font-size: .85rem; line-height: 1.7; max-width: 260px; }
+    .footer-col h4 {
+      font-family: 'Poppins', sans-serif; font-size: .82rem; font-weight: 700;
+      color: var(--white); letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .footer-col a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .875rem; transition: color .2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 1.5rem; font-size: .8rem;
+      flex-wrap: wrap; gap: .75rem;
+    }
+
+    /* ── RESPONSIVE ───────────────────────── */
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: fixed;
+        top: 88px; left: 0; right: 0;
+        background: var(--white); padding: 1.5rem 2rem 2rem;
+        border-bottom: 1px solid rgba(31,60,136,.1);
+        box-shadow: 0 8px 24px rgba(0,0,0,.08);
+        gap: 1rem;
+      }
+      .form-row { grid-template-columns: 1fr; }
+      .trust-divider { display: none; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* reveal animation */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="GrowthPilot Studio" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#cases">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta active">Book a Call</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-label">Free Strategy Session</div>
+    <h1>Let's Talk About<br>Your Growth Goals</h1>
+    <p>Tell us about your business and we'll put together a tailored roadmap to help you generate more qualified leads with paid ads.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact-section">
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info reveal">
+          <h2>Get in Touch</h2>
+          <p>Whether you're ready to start or just exploring options, we'd love to hear from you. Fill in the form and we'll get back to you within 24 hours.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Email</strong>
+                <a href="mailto:hello@growthpilotstudio.in">hello@growthpilotstudio.in</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Location</strong>
+                <span>India (Remote-first, global clients)</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Response Time</strong>
+                <span>Within 24 business hours</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- What to expect -->
+          <div class="expect-box">
+            <h3>What Happens Next</h3>
+            <div class="expect-item">
+              <div class="check-dot">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p><strong>We review your submission</strong> — We'll look at your current setup, goals, and industry before reaching out.</p>
+            </div>
+            <div class="expect-item">
+              <div class="check-dot">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p><strong>You hear from us within 24 hours</strong> — We'll confirm a time that works for your free strategy call.</p>
+            </div>
+            <div class="expect-item">
+              <div class="check-dot">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p><strong>Free 30-minute strategy session</strong> — We'll walk you through your biggest growth opportunities and what a campaign could look like.</p>
+            </div>
+            <div class="expect-item">
+              <div class="check-dot">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <p><strong>No pressure, no obligation</strong> — You'll leave with clear ideas regardless of whether we work together.</p>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="faq-section">
+            <h3>Common Questions</h3>
+            <div class="faq-item" id="faq1">
+              <div class="faq-q" onclick="toggleFaq('faq1')">
+                <span>What's the minimum monthly budget you work with?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a">We typically work best with businesses spending ₹50,000–₹5,00,000+ per month on ads. That said, we'll discuss your situation on the call and guide you honestly.</div>
+            </div>
+            <div class="faq-item" id="faq2">
+              <div class="faq-q" onclick="toggleFaq('faq2')">
+                <span>Do you offer month-to-month contracts?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a">Yes. We work on a monthly retainer with no long-term lock-in. We earn your business every month through results.</div>
+            </div>
+            <div class="faq-item" id="faq3">
+              <div class="faq-q" onclick="toggleFaq('faq3')">
+                <span>Which industries do you specialise in?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a">We work with B2B SaaS, professional services, e-commerce, and healthcare businesses. Our core strength is lead generation for businesses with longer sales cycles.</div>
+            </div>
+            <div class="faq-item" id="faq4">
+              <div class="faq-q" onclick="toggleFaq('faq4')">
+                <span>How quickly can campaigns go live?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="faq-a">Typically within 7–10 business days of onboarding. This includes strategy, ad copy, creative briefs, tracking setup, and campaign structure.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-card reveal" style="transition-delay:.15s">
+          <h2>Book Your Free Strategy Call</h2>
+          <p>Takes less than 2 minutes. No commitment required.</p>
+
+          <form action="https://formspree.io/f/xeelypkz" method="POST">
+            <input type="hidden" name="_next" value="https://growthpilotstudio.in/thank-you.html" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Rahul Sharma" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Company Name *</label>
+                <input type="text" id="company" name="company" placeholder="Your Company" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" placeholder="rahul@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="platform">Which platform(s) are you interested in? *</label>
+              <select id="platform" name="platform" required>
+                <option value="" disabled selected>Select a platform</option>
+                <option>Google Ads</option>
+                <option>LinkedIn Ads</option>
+                <option>Meta Ads (Facebook / Instagram)</option>
+                <option>All Platforms</option>
+                <option>Not sure yet — need advice</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budget">Monthly Ad Budget</label>
+                <select id="budget" name="budget">
+                  <option value="" disabled selected>Select range</option>
+                  <option>Under ₹50,000</option>
+                  <option>₹50,000 – ₹1,50,000</option>
+                  <option>₹1,50,000 – ₹5,00,000</option>
+                  <option>₹5,00,000+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="website">Website URL</label>
+                <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your goals *</label>
+              <textarea id="message" name="message" placeholder="What are your main challenges? What does success look like for your business?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Book My Free Strategy Call →</button>
+            <p class="form-note">🔒 Your details are safe. We never share your information with third parties.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section id="trust">
+    <div class="trust-inner">
+      <div class="trust-stat">
+        <span class="num">₹20Cr+</span>
+        <div class="lbl">Ad Spend Managed</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat">
+        <span class="num">40+</span>
+        <div class="lbl">Clients Served</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat">
+        <span class="num">3.8×</span>
+        <div class="lbl">Avg. ROAS Delivered</div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat">
+        <span class="num">24h</span>
+        <div class="lbl">Response Time</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo_white.png" alt="GrowthPilot Studio" />
+        <p>Performance marketing that fills your pipeline with qualified leads — not just clicks.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#google-ads">Google Ads</a></li>
+          <li><a href="services.html#linkedin-ads">LinkedIn Ads</a></li>
+          <li><a href="services.html#meta-ads">Meta Ads</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 GrowthPilot Studio. All rights reserved.</span>
+      <span>hello@growthpilotstudio.in</span>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Hamburger
+    const ham = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    ham.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+
+    // FAQ accordion
+    function toggleFaq(id) {
+      const item = document.getElementById(id);
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>
