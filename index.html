@@ -944,7 +944,7 @@
 
       <div class="contact-form fi">
         <!-- Replace YOUR_FORM_ID after signing up free at formspree.io -->
-        <form action="https://formspree.io/f/xeelypkz" method="POST">
+        <form id="homeForm" action="#" method="POST">
           <input type="hidden" name="_next" value="https://growthpilotstudio.in/thank-you.html" />
           <div class="form-row">
             <div class="form-group">
@@ -1027,6 +1027,24 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+  // Google Sheets form submission
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzviGQWUTryNay7QmSGDE0F_qwVxobtER8VuLDsJa8WR7sOs5QVHfg3JsfC3cqc24MR/exec';
+  const homeForm = document.getElementById('homeForm');
+  const homeBtn = homeForm.querySelector('.form-submit');
+
+  homeForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    homeBtn.textContent = 'Sending…';
+    homeBtn.disabled = true;
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(new FormData(homeForm))
+    }).finally(() => {
+      window.location.href = 'https://growthpilotstudio.in/thank-you.html';
+    });
+  });
 </script>
 </body>
 </html>

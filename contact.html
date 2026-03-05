@@ -453,8 +453,7 @@
           <h2>Book Your Free Strategy Call</h2>
           <p>Takes less than 2 minutes. No commitment required.</p>
 
-          <form action="https://formspree.io/f/xeelypkz" method="POST">
-            <input type="hidden" name="_next" value="https://growthpilotstudio.in/thank-you.html" />
+          <form id="contactForm" action="#" method="POST">
 
             <div class="form-row">
               <div class="form-group">
@@ -607,6 +606,24 @@
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     }
+
+    // Google Sheets form submission
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzviGQWUTryNay7QmSGDE0F_qwVxobtER8VuLDsJa8WR7sOs5QVHfg3JsfC3cqc24MR/exec';
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = contactForm.querySelector('.btn-submit');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams(new FormData(contactForm))
+      }).finally(() => {
+        window.location.href = 'https://growthpilotstudio.in/thank-you.html';
+      });
+    });
   </script>
 </body>
 </html>
