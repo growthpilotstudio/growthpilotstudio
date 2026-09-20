@@ -577,6 +577,101 @@
       .steps { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
+  
+    /* ── 2026 HOMEPAGE REFRESH ─────────────────── */
+    :root {
+      --surface: #F8FAFF;
+      --ink: #101828;
+      --muted: #667085;
+      --ring: rgba(58,134,255,.16);
+    }
+    body { color: var(--ink); }
+    section { padding-top: 7rem; padding-bottom: 7rem; }
+    .s-label { padding: .35rem .7rem; border: 1px solid var(--blue-border); border-radius: 999px; background: rgba(58,134,255,.06); }
+    .s-title { max-width: 760px; letter-spacing: -.04em; }
+    .s-desc { max-width: 680px; }
+
+    #hero { min-height: 92vh; background:
+      radial-gradient(circle at 78% 28%, rgba(58,134,255,.34), transparent 28%),
+      radial-gradient(circle at 16% 82%, rgba(58,134,255,.12), transparent 28%),
+      linear-gradient(135deg,#091A48 0%,#102C6C 52%,#174EA6 100%); }
+    .hero-layout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr); gap:4.5rem; align-items:center; }
+    #hero h1 { max-width: 780px; }
+    .hero-sub { max-width: 650px; font-size: clamp(1rem,1.8vw,1.18rem); }
+    .hero-proof { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.35rem; }
+    .hero-proof span { color:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06); padding:.45rem .75rem; border-radius:999px; font-size:.76rem; font-weight:600; }
+
+    .signal-card { position:relative; border:1px solid rgba(255,255,255,.18); border-radius:24px; padding:1.25rem; background:rgba(255,255,255,.08); backdrop-filter:blur(16px); box-shadow:0 30px 80px rgba(3,12,35,.35); }
+    .signal-head { display:flex; align-items:center; justify-content:space-between; color:#fff; padding:.35rem .35rem 1rem; }
+    .signal-head strong { font-family:'Poppins',sans-serif; font-size:.95rem; }
+    .signal-live { font-size:.68rem; color:#9FD0FF; text-transform:uppercase; letter-spacing:.12em; }
+    .signal-flow { display:grid; gap:.7rem; }
+    .signal-row { display:grid; grid-template-columns:40px 1fr auto; gap:.8rem; align-items:center; padding:.9rem; border-radius:14px; background:rgba(5,20,55,.46); border:1px solid rgba(255,255,255,.08); }
+    .signal-num { width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(58,134,255,.2);color:#9FD0FF;font-weight:800; }
+    .signal-copy b { display:block;color:#fff;font-size:.84rem;margin-bottom:.1rem; }
+    .signal-copy span { display:block;color:rgba(255,255,255,.52);font-size:.7rem; }
+    .signal-status { color:#9FD0FF;font-size:.68rem;font-weight:700; }
+    .signal-note { margin-top:.8rem;padding:.85rem 1rem;border-radius:12px;background:rgba(58,134,255,.14);color:rgba(255,255,255,.75);font-size:.75rem;line-height:1.55; }
+
+    #trust { background:#fff; }
+    .trust-inner { justify-content:center; }
+    .trust-platforms { justify-content:center; }
+    .trust-badge { opacity:1; background:var(--surface); border:1px solid var(--border); padding:.6rem .9rem; border-radius:999px; }
+
+    #problem { background:linear-gradient(180deg,#fff 0%,#F8FAFF 100%); }
+    .problem-grid { gap:2rem; }
+    .pain-item { background:#fff; padding:1.25rem; }
+    .sol-card { background:#0E2057; border:0; box-shadow:0 24px 60px rgba(14,32,87,.18); }
+    .sol-card h3 { color:#fff; font-size:1.55rem; }
+    .sol-card p { color:rgba(255,255,255,.7); }
+    .sol-card .sol-pill { color:#B9D9FF; background:rgba(58,134,255,.18); }
+
+    #services { background:#F7F9FC; }
+    .svc-grid { gap:1.1rem; }
+    .svc-card { border-radius:20px; padding:2.2rem; box-shadow:0 1px 0 rgba(16,24,40,.02); }
+    .svc-card:hover { transform:translateY(-7px); box-shadow:0 22px 55px rgba(31,60,136,.12); }
+
+    #process { background:linear-gradient(135deg,#091A48,#14377D); position:relative; overflow:hidden; }
+    #process::after { content:''; position:absolute; width:480px;height:480px;border-radius:50%;right:-180px;top:-180px;background:rgba(58,134,255,.13);filter:blur(2px); }
+    .steps { gap:.9rem; z-index:1; }
+    .step { text-align:left; padding:1.35rem; border:1px solid rgba(255,255,255,.11); background:rgba(255,255,255,.055); border-radius:18px; }
+    .steps::before { display:none; }
+    .step-num { margin:0 0 1.2rem; width:48px;height:48px;font-size:1rem; }
+    .step p { font-size:.8rem; }
+
+    #cases { background:#fff; }
+    .case-card { border-radius:20px; padding:2.1rem; }
+    .metric { background:#F7F9FC; padding:1rem; }
+
+    #why { background:#F7F9FC; }
+    .why-item { border-radius:18px; padding:1.8rem; }
+    .why-item h4 { font-size:1rem; }
+
+    #about { background:#fff; }
+    .about-card { border-radius:28px; background:
+      radial-gradient(circle at 75% 20%,rgba(58,134,255,.38),transparent 30%),
+      linear-gradient(145deg,#0B1F54,#1F3C88); }
+
+    #cta-band { background:
+      radial-gradient(circle at 50% 0%,rgba(58,134,255,.28),transparent 35%),
+      linear-gradient(135deg,#091A48,#153B87); }
+    #cta-band .s-title { margin-left:auto;margin-right:auto;color:#fff; }
+    #cta-band .s-desc { margin-left:auto;margin-right:auto;color:rgba(255,255,255,.7); }
+
+    .contact-form { border-radius:22px; box-shadow:0 22px 60px rgba(31,60,136,.09); }
+
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns:1fr; gap:2.5rem; }
+      .signal-card { max-width:620px; }
+      section { padding-top:5rem; padding-bottom:5rem; }
+    }
+    @media (max-width: 680px) {
+      #hero { min-height:auto; padding-top:8rem; }
+      .signal-row { grid-template-columns:36px 1fr; }
+      .signal-status { grid-column:2; }
+      .hero-proof { gap:.45rem; }
+      section { padding-left:1.25rem; padding-right:1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -607,7 +702,7 @@
   HERO
 ════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-inner">
+  <div class="hero-inner"><div class="hero-layout"><div class="hero-copy">
     <div class="hero-badge">Performance Marketing Agency</div>
     <h1>Turning Ad Spend Into<br><span class="hl">Qualified Leads</span></h1>
     <p class="hero-sub">We help B2B and high-growth companies scale with performance marketing across Google Ads, LinkedIn Ads, and Meta Ads — focusing on leads that convert, not just clicks.</p>
@@ -635,8 +730,17 @@
         <span class="stat-lbl">Ad Platforms Mastered</span>
       </div>
     </div>
-  </div>
-</section>
+      <div class="hero-proof"><span>Google Ads</span><span>Meta Ads</span><span>LinkedIn Ads</span><span>Conversion Tracking</span><span>CRM Feedback</span><span>Landing Pages</span></div></div>
+      <div class="signal-card fi">
+        <div class="signal-head"><strong>Lead Quality Signal</strong><span class="signal-live">● Connected funnel</span></div>
+        <div class="signal-flow">
+          <div class="signal-row"><div class="signal-num">01</div><div class="signal-copy"><b>Paid Media</b><span>Google · Meta · LinkedIn</span></div><div class="signal-status">TARGET</div></div>
+          <div class="signal-row"><div class="signal-num">02</div><div class="signal-copy"><b>Landing Experience</b><span>Message match · Conversion rate</span></div><div class="signal-status">CONVERT</div></div>
+          <div class="signal-row"><div class="signal-num">03</div><div class="signal-copy"><b>CRM &amp; Sales Feedback</b><span>MQL · SQL · lead quality</span></div><div class="signal-status">QUALIFY</div></div>
+          <div class="signal-row"><div class="signal-num">04</div><div class="signal-copy"><b>Campaign Optimisation</b><span>Feed quality signals back into media</span></div><div class="signal-status">SCALE</div></div>
+        </div>
+        <div class="signal-note">The goal isn't the cheapest form fill. It's finding the campaigns, audiences and keywords that create better sales conversations.</div>
+      </div></div></div>
 
 <!-- ════════════════════════════════
   TRUST BAND
