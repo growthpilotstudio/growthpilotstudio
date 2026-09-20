@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GrowthPilot Studio – Performance marketing agency turning ad spend into qualified leads through Google Ads, LinkedIn Ads, and Meta Ads." />
-  <title>GrowthPilot Studio – Turning Ad Spend Into Qualified Leads</title>
+  <meta name="description" content="GrowthPilot Studio builds Google, Meta and LinkedIn lead generation systems focused on qualified leads, conversion tracking and lower cost per qualified opportunity." />
+  <title>Performance Marketing for Qualified Leads | GrowthPilot Studio</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -577,6 +577,101 @@
       .steps { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
+  
+    /* ── 2026 HOMEPAGE REFRESH ─────────────────── */
+    :root {
+      --surface: #F8FAFF;
+      --ink: #101828;
+      --muted: #667085;
+      --ring: rgba(58,134,255,.16);
+    }
+    body { color: var(--ink); }
+    section { padding-top: 7rem; padding-bottom: 7rem; }
+    .s-label { padding: .35rem .7rem; border: 1px solid var(--blue-border); border-radius: 999px; background: rgba(58,134,255,.06); }
+    .s-title { max-width: 760px; letter-spacing: -.04em; }
+    .s-desc { max-width: 680px; }
+
+    #hero { min-height: 92vh; background:
+      radial-gradient(circle at 78% 28%, rgba(58,134,255,.34), transparent 28%),
+      radial-gradient(circle at 16% 82%, rgba(58,134,255,.12), transparent 28%),
+      linear-gradient(135deg,#091A48 0%,#102C6C 52%,#174EA6 100%); }
+    .hero-layout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr); gap:4.5rem; align-items:center; }
+    #hero h1 { max-width: 780px; }
+    .hero-sub { max-width: 650px; font-size: clamp(1rem,1.8vw,1.18rem); }
+    .hero-proof { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.35rem; }
+    .hero-proof span { color:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.06); padding:.45rem .75rem; border-radius:999px; font-size:.76rem; font-weight:600; }
+
+    .signal-card { position:relative; border:1px solid rgba(255,255,255,.18); border-radius:24px; padding:1.25rem; background:rgba(255,255,255,.08); backdrop-filter:blur(16px); box-shadow:0 30px 80px rgba(3,12,35,.35); }
+    .signal-head { display:flex; align-items:center; justify-content:space-between; color:#fff; padding:.35rem .35rem 1rem; }
+    .signal-head strong { font-family:'Poppins',sans-serif; font-size:.95rem; }
+    .signal-live { font-size:.68rem; color:#9FD0FF; text-transform:uppercase; letter-spacing:.12em; }
+    .signal-flow { display:grid; gap:.7rem; }
+    .signal-row { display:grid; grid-template-columns:40px 1fr auto; gap:.8rem; align-items:center; padding:.9rem; border-radius:14px; background:rgba(5,20,55,.46); border:1px solid rgba(255,255,255,.08); }
+    .signal-num { width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(58,134,255,.2);color:#9FD0FF;font-weight:800; }
+    .signal-copy b { display:block;color:#fff;font-size:.84rem;margin-bottom:.1rem; }
+    .signal-copy span { display:block;color:rgba(255,255,255,.52);font-size:.7rem; }
+    .signal-status { color:#9FD0FF;font-size:.68rem;font-weight:700; }
+    .signal-note { margin-top:.8rem;padding:.85rem 1rem;border-radius:12px;background:rgba(58,134,255,.14);color:rgba(255,255,255,.75);font-size:.75rem;line-height:1.55; }
+
+    #trust { background:#fff; }
+    .trust-inner { justify-content:center; }
+    .trust-platforms { justify-content:center; }
+    .trust-badge { opacity:1; background:var(--surface); border:1px solid var(--border); padding:.6rem .9rem; border-radius:999px; }
+
+    #problem { background:linear-gradient(180deg,#fff 0%,#F8FAFF 100%); }
+    .problem-grid { gap:2rem; }
+    .pain-item { background:#fff; padding:1.25rem; }
+    .sol-card { background:#0E2057; border:0; box-shadow:0 24px 60px rgba(14,32,87,.18); }
+    .sol-card h3 { color:#fff; font-size:1.55rem; }
+    .sol-card p { color:rgba(255,255,255,.7); }
+    .sol-card .sol-pill { color:#B9D9FF; background:rgba(58,134,255,.18); }
+
+    #services { background:#F7F9FC; }
+    .svc-grid { gap:1.1rem; }
+    .svc-card { border-radius:20px; padding:2.2rem; box-shadow:0 1px 0 rgba(16,24,40,.02); }
+    .svc-card:hover { transform:translateY(-7px); box-shadow:0 22px 55px rgba(31,60,136,.12); }
+
+    #process { background:linear-gradient(135deg,#091A48,#14377D); position:relative; overflow:hidden; }
+    #process::after { content:''; position:absolute; width:480px;height:480px;border-radius:50%;right:-180px;top:-180px;background:rgba(58,134,255,.13);filter:blur(2px); }
+    .steps { gap:.9rem; z-index:1; }
+    .step { text-align:left; padding:1.35rem; border:1px solid rgba(255,255,255,.11); background:rgba(255,255,255,.055); border-radius:18px; }
+    .steps::before { display:none; }
+    .step-num { margin:0 0 1.2rem; width:48px;height:48px;font-size:1rem; }
+    .step p { font-size:.8rem; }
+
+    #cases { background:#fff; }
+    .case-card { border-radius:20px; padding:2.1rem; }
+    .metric { background:#F7F9FC; padding:1rem; }
+
+    #why { background:#F7F9FC; }
+    .why-item { border-radius:18px; padding:1.8rem; }
+    .why-item h4 { font-size:1rem; }
+
+    #about { background:#fff; }
+    .about-card { border-radius:28px; background:
+      radial-gradient(circle at 75% 20%,rgba(58,134,255,.38),transparent 30%),
+      linear-gradient(145deg,#0B1F54,#1F3C88); }
+
+    #cta-band { background:
+      radial-gradient(circle at 50% 0%,rgba(58,134,255,.28),transparent 35%),
+      linear-gradient(135deg,#091A48,#153B87); }
+    #cta-band .s-title { margin-left:auto;margin-right:auto;color:#fff; }
+    #cta-band .s-desc { margin-left:auto;margin-right:auto;color:rgba(255,255,255,.7); }
+
+    .contact-form { border-radius:22px; box-shadow:0 22px 60px rgba(31,60,136,.09); }
+
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns:1fr; gap:2.5rem; }
+      .signal-card { max-width:620px; }
+      section { padding-top:5rem; padding-bottom:5rem; }
+    }
+    @media (max-width: 680px) {
+      #hero { min-height:auto; padding-top:8rem; }
+      .signal-row { grid-template-columns:36px 1fr; }
+      .signal-status { grid-column:2; }
+      .hero-proof { gap:.45rem; }
+      section { padding-left:1.25rem; padding-right:1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -607,7 +702,7 @@
   HERO
 ════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-inner">
+  <div class="hero-inner"><div class="hero-layout"><div class="hero-copy">
     <div class="hero-badge">Performance Marketing Agency</div>
     <h1>Turning Ad Spend Into<br><span class="hl">Qualified Leads</span></h1>
     <p class="hero-sub">We help B2B and high-growth companies scale with performance marketing across Google Ads, LinkedIn Ads, and Meta Ads — focusing on leads that convert, not just clicks.</p>
@@ -635,8 +730,17 @@
         <span class="stat-lbl">Ad Platforms Mastered</span>
       </div>
     </div>
-  </div>
-</section>
+      <div class="hero-proof"><span>Google Ads</span><span>Meta Ads</span><span>LinkedIn Ads</span><span>Conversion Tracking</span><span>CRM Feedback</span><span>Landing Pages</span></div></div>
+      <div class="signal-card fi">
+        <div class="signal-head"><strong>Lead Quality Signal</strong><span class="signal-live">● Connected funnel</span></div>
+        <div class="signal-flow">
+          <div class="signal-row"><div class="signal-num">01</div><div class="signal-copy"><b>Paid Media</b><span>Google · Meta · LinkedIn</span></div><div class="signal-status">TARGET</div></div>
+          <div class="signal-row"><div class="signal-num">02</div><div class="signal-copy"><b>Landing Experience</b><span>Message match · Conversion rate</span></div><div class="signal-status">CONVERT</div></div>
+          <div class="signal-row"><div class="signal-num">03</div><div class="signal-copy"><b>CRM &amp; Sales Feedback</b><span>MQL · SQL · lead quality</span></div><div class="signal-status">QUALIFY</div></div>
+          <div class="signal-row"><div class="signal-num">04</div><div class="signal-copy"><b>Campaign Optimisation</b><span>Feed quality signals back into media</span></div><div class="signal-status">SCALE</div></div>
+        </div>
+        <div class="signal-note">The goal isn't the cheapest form fill. It's finding the campaigns, audiences and keywords that create better sales conversations.</div>
+      </div></div></div>
 
 <!-- ════════════════════════════════
   TRUST BAND
@@ -675,7 +779,7 @@
 <section id="problem">
   <div class="section-inner">
     <p class="s-label fi">The Problem</p>
-    <h2 class="s-title fi" style="color:var(--navy)">Is Your Ad Spend Generating Leads<br>— or Just Clicks?</h2>
+    <h2 class="s-title fi" style="color:var(--navy)">More Leads Aren’t the Goal.<br>Better Leads Are.</h2>
     <div class="problem-grid">
       <div class="pain-list fi">
         <div class="pain-item">
@@ -698,9 +802,9 @@
 
       <div class="sol-card fi">
         <span class="sol-pill">✓ The GrowthPilot Studio Approach</span>
-        <h3>We Focus on Revenue-Generating Leads</h3>
-        <p>Many companies invest heavily in advertising but struggle with low lead quality, high cost per lead, and poor optimisation. GrowthPilot Studio focuses on generating qualified leads that convert into revenue — not just clicks on a dashboard.</p>
-        <p>Every campaign is built around your ideal customer profile, with conversion tracking, bid strategy, and creative all optimised for lead quality from day one.</p>
+        <h3>We Optimise Beyond the Form Fill</h3>
+        <p>A low CPL means little if sales cannot convert the leads. GrowthPilot Studio connects campaign decisions with what happens after the click — landing-page conversion, lead quality and sales feedback.</p>
+        <p>We use conversion tracking and downstream lead-quality signals to understand which keywords, audiences and creatives are producing the conversations your sales team actually wants.</p>
         <a href="#contact" class="btn-primary" style="margin-top:.5rem">Start Generating Qualified Leads</a>
       </div>
     </div>
@@ -713,8 +817,8 @@
 <section id="services">
   <div class="section-inner">
     <p class="s-label fi">What We Do</p>
-    <h2 class="s-title fi" style="color:var(--navy)">Performance Marketing<br>That Drives Real Revenue</h2>
-    <p class="s-desc fi">Specialised lead generation across the three most powerful ad platforms — engineered for qualified pipeline, not vanity metrics.</p>
+    <h2 class="s-title fi" style="color:var(--navy)">Paid Media Built Around<br>Lead Quality</h2>
+    <p class="s-desc fi">Google, Meta and LinkedIn campaigns connected to landing pages, conversion tracking and lead-quality feedback — so optimisation goes beyond platform-reported conversions.</p>
     <div class="svc-grid">
 
       <div class="svc-card fi">
@@ -769,27 +873,27 @@
 <section id="process">
   <div class="section-inner">
     <p class="s-label fi">How It Works</p>
-    <h2 class="s-title fi">Our 4-Step Growth Process</h2>
-    <p class="s-desc fi">A proven framework built to reduce cost per lead, improve lead quality, and profitably scale ad spend.</p>
+    <h2 class="s-title fi">The GrowthPilot Loop</h2>
+    <p class="s-desc fi">A feedback loop that connects paid media with conversion and lead-quality signals, so every optimisation is based on what happens after the click.</p>
     <div class="steps">
       <div class="step fi">
         <div class="step-num">01</div>
-        <h3>Strategy &amp; Audit</h3>
+        <h3>Target</h3>
         <p>Analyse your business, audience, and funnel. Identify gaps and build the right targeting foundation.</p>
       </div>
       <div class="step fi">
         <div class="step-num">02</div>
-        <h3>Campaign Setup</h3>
+        <h3>Convert</h3>
         <p>Build high-performing campaigns with precision tracking, smart bidding, and conversion-focused creative.</p>
       </div>
       <div class="step fi">
         <div class="step-num">03</div>
-        <h3>Optimise</h3>
+        <h3>Qualify</h3>
         <p>Continuously reduce CPL and improve lead quality through rigorous, data-driven decisions.</p>
       </div>
       <div class="step fi">
         <div class="step-num">04</div>
-        <h3>Scale</h3>
+        <h3>Learn &amp; Scale</h3>
         <p>Increase ad spend confidently once campaigns are profitable and delivering consistent ROI.</p>
       </div>
     </div>
@@ -843,11 +947,11 @@
 <section id="why">
   <div class="section-inner">
     <p class="s-label fi">Why GrowthPilot Studio</p>
-    <h2 class="s-title fi" style="color:var(--navy)">Performance-Driven.<br>Results-Obsessed.</h2>
+    <h2 class="s-title fi" style="color:var(--navy)">Clicks Aren’t Pipeline.<br>Form Fills Aren’t Qualified Leads.</h2>
     <div class="why-grid">
       <div class="why-item fi">
         <div class="why-ico">🎯</div>
-        <div><h4>Performance-Driven Approach</h4><p>Every decision is grounded in campaign performance data — no guesswork, no vanity metrics.</p></div>
+        <div><h4>Performance-Driven Approach</h4><p>We look beyond CTR and platform conversions to understand which campaigns are creating meaningful sales opportunities.</p></div>
       </div>
       <div class="why-item fi">
         <div class="why-ico">✅</div>
@@ -873,10 +977,10 @@
     <div class="about-grid">
       <div class="fi">
         <p class="s-label">About</p>
-        <h2 class="s-title" style="color:var(--navy)">Built by a Performance Marketing Specialist</h2>
+        <h2 class="s-title" style="color:var(--navy)">Built by a Performance Marketer, Not a Sales Agency Selling Marketing</h2>
         <div class="divider"></div>
         <p style="color:var(--txt-light);line-height:1.82;margin-bottom:1rem;font-size:.92rem">GrowthPilot Studio was founded by <strong style="color:var(--navy)">Amit Yadav</strong>, a performance marketing specialist with deep expertise in B2B lead generation through Google Ads, LinkedIn Ads, and Meta Ads.</p>
-        <p style="color:var(--txt-light);line-height:1.82;margin-bottom:2rem;font-size:.92rem">With a focus on high-growth companies, Amit built GrowthPilot Studio to provide specialised, results-oriented performance marketing that turns ad spend into predictable, qualified pipeline — not just clicks on a dashboard.</p>
+        <p style="color:var(--txt-light);line-height:1.82;margin-bottom:2rem;font-size:.92rem">GrowthPilot Studio brings hands-on paid acquisition, landing-page thinking, conversion measurement and lead-quality analysis together in one system — without layers of account management between strategy and execution.</p>
         <a href="#contact" class="btn-navy">Work With Amit</a>
       </div>
       <div class="about-card fi">
@@ -901,8 +1005,8 @@
 <section id="cta-band">
   <div class="section-inner" style="text-align:center">
     <p class="s-label fi">Get Started</p>
-    <h2 class="s-title fi">Ready to Turn Ad Spend Into<br>Qualified Leads?</h2>
-    <p class="s-desc fi">Book a free strategy call. We'll analyse your setup and show you exactly where the growth opportunities are.</p>
+    <h2 class="s-title fi">Your Next Lead Shouldn’t Just Be Cheaper.<br>It Should Be Better.</h2>
+    <p class="s-desc fi">Let’s review your campaigns, funnel and tracking to identify where qualified leads are being lost — and where paid media can work harder.</p>
     <div class="fi" style="margin-top:2.25rem">
       <a href="#contact" class="btn-primary" style="font-size:1rem;padding:.95rem 2.25rem">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.3 1l-2.2 2.2z" fill="currentColor"/></svg>
@@ -990,7 +1094,7 @@
       <a href="#hero" class="footer-logo">
         <img src="logo_white.png" alt="GrowthPilot Studio" />
       </a>
-      <p class="footer-tagline">Turning Ad Spend Into Qualified Leads</p>
+      <p class="footer-tagline">Performance Marketing Built for Qualified Leads</p>
     </div>
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
